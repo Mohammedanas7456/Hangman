@@ -45,6 +45,7 @@ function animalGuess() {
       const str = builtInRevealer(revealedString, orignalString);
       wordInnerHTML.innerHTML = str;
       revealedString = str;
+
       flag = true;
       if (!revealedString.includes("_")) {
         isWon(orignalString);
