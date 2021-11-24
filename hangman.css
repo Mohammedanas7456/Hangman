@@ -1,0 +1,191 @@
+body {
+  background-image: linear-gradient(
+    201deg,
+    rgba(8, 4, 80, 1) 0%,
+    rgba(77, 198, 178, 1) 36%,
+    rgba(39, 60, 209, 1) 78%,
+    rgba(34, 83, 93, 1) 100%
+  );
+  text-align: center;
+  margin: 0px;
+  padding-top: 0px;
+  height: 100vh;
+}
+.heading {
+  padding: 15px;
+  border-radius: 1.7rem;
+  text-align: center;
+  color: rgb(8, 4, 80);
+  font-size: 60px;
+  background: linear-gradient(
+    201deg,
+    rgba(77, 198, 178, 1) 46%,
+    rgba(39, 60, 209, 1) 100%
+  );
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: inline-block;
+}
+p {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(8, 3, 70);
+  font-size: 1.3rem;
+}
+input[type="text"] {
+  outline: none;
+  background-color: rgba(107, 198, 178, 1);
+  width: 30%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-sizing: border-box;
+
+  font-size: 0.9rem;
+  color: #2e4688;
+  font-weight: 600;
+}
+input[type="text"]::selection {
+  outline: 2px solid blue;
+}
+input[type="text"]::placeholder {
+  font-size: 0.9rem;
+  color: #2e4688;
+  font-weight: 600;
+}
+.gameBox {
+  border-radius: 5px;
+}
+.guessLetter {
+  padding: 0px;
+  text-align: center;
+  color: floralwhite;
+}
+.letter {
+  margin: 0px;
+  padding: 0px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  color: black;
+  letter-spacing: 10px;
+}
+.life {
+  font-size: 25px;
+  font-weight: 800;
+}
+.two-letter {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  animation: animate 1.5s linear infinite;
+  font-weight: bolder;
+  color: black;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.gameButton {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 18px;
+  text-align: center;
+  transition: all 0.3s;
+  border-radius: 1rem;
+  margin-bottom: 5px;
+  background-color: rgba(77, 198, 178, 1);
+}
+.gameButton:hover {
+  background-color: #2e4688;
+}
+
+.hint:hover {
+  background-color: #2e4688;
+  color: white;
+}
+.menuButton {
+  font-size: 19px;
+  padding: 12px 25px;
+  text-align: center;
+  transition: all 0.5s;
+}
+.menuButton:hover {
+  background-color: #2e4688;
+  color: white;
+}
+.wrong {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  animation: animate 1.5s linear infinite;
+  font-weight: bolder;
+  color: red;
+}
+.category {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(8, 3, 70);
+  font-size: 2rem;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.img-window {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  position: fixed;
+  bottom: 17vh;
+  right: 26vw;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-window img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.img-window .loader {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(38, 0, 255);
+  border-radius: 50%;
+  animation: loader infinite 1s;
+  display: none;
+}
+#secondScreen {
+  /* border: 5px solid red; */
+  height: 100vh;
+}
+@keyframes loader {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}

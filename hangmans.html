@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="styleSheet" href="./hangman.css">
+        <title>hangman</title>
+    </head>
+<body>
+        <audio id="selectOption" src="./beep1.mp3" autoplay="false" ></audio>
+        <audio id="letterCorrect" src="./letter-correct.mp3" autoplay="false" ></audio>
+        <audio id="letterWrong" src="./Aww-sound-effect.mp3" autoplay="false" ></audio>
+        <audio id="winningAudio" src="./level-completed.mp3" autoplay="false" ></audio>
+        <audio id="losingAudio" src="./You-lose-game-over.mp3" autoplay="false" ></audio>
+
+    <div id="first screen" style="display: none;">
+        <h1 class="heading">        HANGMAN    </h1>
+        <p>Press Enter to Submit a letter</p>
+        <div class="gameBox">
+        <input type="text" id="user-input" placeholder="Enter a letter" />
+        <p class="guessLetter">Guess this letter</p>
+        <p class="letter" id="word"></p>
+        <p class="life"> Life: <span id="life">5</span> </p>
+        <p id="wrong" class="wrong"> </p>
+        <p id="won-condition"></p>
+        <p id="two-letter-condition" class="two-letter">  </p>
+        <button type="button" id="hint" class="gameButton"> HINT </button>
+        <div class="res">
+        <button onclick="window.location.reload()" id="restart" class="gameButton" style="display: none;">restart</button>
+        <div class="img-window">
+            <div class="loader" ></div>
+            <img />
+        </div>
+        </div>
+        </div>
+    </div>
+    <div id="secondScreen">
+        <h1 class="heading">HANGMAN</h1>
+        <h2 class="category">Choose a Category</h2>
+        <button onclick="hideScreen('animal')" type="button" id="animal" class="gameButton"> Animals </button>
+        <button onclick="hideScreen('country')" type="button" id="places" class="gameButton"> country </button>
+        <button onclick="hideScreen()" type="button" id="names" class="gameButton"> Names </button>
+    </div>
+    <script src="./dataset/animals.js" ></script>
+    <script src="./dataset/places.js" ></script>
+    <script src="./hangman.js" ></script>
+</body>
+</html>
