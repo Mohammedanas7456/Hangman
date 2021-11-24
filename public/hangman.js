@@ -6,7 +6,7 @@ function hideScreen(arg) {
   } else if (arg == "country") {
     arrayToPass = [...countryList];
   } else if (arg === "names") {
-    arrayToPass = [...cricketersList];
+    arrayToPass = [...fruitsList];
   }
   playSound();
 
