@@ -1,5 +1,7 @@
+// making global variables
 let arrayToPass;
 let gameOverFlag = true;
+// for simaltaneously showing 2 screens & selection of category
 function hideScreen(arg) {
   if (arg == "animal") {
     arrayToPass = [...animalsList];
@@ -13,8 +15,9 @@ function hideScreen(arg) {
   let screen = document.getElementById("secondScreen");
   screen.style.display = "none";
   document.getElementById("first screen").style.display = "block";
-  animalGuess();
+  wordGuess();
 }
+// generating random no.
 
 function pickRandom(arr) {
   let range = arr.length;
@@ -22,7 +25,10 @@ function pickRandom(arr) {
   return arr[index];
 }
 
-function animalGuess() {
+// main logic
+function wordGuess() {
+  // making variables withi ih the function scope
+
   wordInnerHTML = document.getElementById("word");
   lifeInnerHTML = document.getElementById("life");
   let hint = document.getElementById("hint");
@@ -31,16 +37,22 @@ function animalGuess() {
   let orignalString = pickRandom(arrayToPass).toLowerCase();
   let gameOver = 5;
   let startingIndex;
+  // hiding the word
+
   let usersInputsArr = [];
   for (let i = 0; i < orignalString.length; i++) {
     gameString = gameString + "_";
   }
+  // showing some characters by default
+
   let revealedString = builtInRevealer(gameString, orignalString);
   console.log(revealedString);
   wordInnerHTML.innerHTML = revealedString;
-  // hint maker
-  let flag = false;
 
+  // hint maker
+  // making sure the hint will run for a single time
+
+  let flag = false;
   hint.addEventListener("click", () => {
     if (flag === false && gameOverFlag === true) {
       const str = builtInRevealer(revealedString, orignalString);
@@ -49,11 +61,14 @@ function animalGuess() {
       playSound();
 
       flag = true;
+      // winning through hint
+
       if (!revealedString.includes("_")) {
         isWon(orignalString);
       }
     }
   });
+  //taking user input
 
   const input = document.getElementById("user-input");
   input.addEventListener("keydown", function (event) {
@@ -70,14 +85,19 @@ function animalGuess() {
       }
 
       //game logic
+
       startingIndex = 0;
       // checking weather character lies inside a word or not
+
       if (orignalString.includes(userInput, startingIndex)) {
         // checking for how many times it is present
+
         while (orignalString.includes(userInput, startingIndex)) {
           // getting the index of inupt character
+
           let indexToReplaced = orignalString.indexOf(userInput, startingIndex);
           // calling the function which is replacing and storing it in variable
+
           let currentString = replacestring(
             revealedString,
             userInput,
@@ -95,6 +115,7 @@ function animalGuess() {
         //game end condition
       } else {
         gameOver--;
+        console.log(userInput);
         document.getElementById("two-letter-condition").innerHTML = "";
         lifeInnerHTML.innerHTML = gameOver;
         wrong.innerHTML = "wrong";
@@ -155,7 +176,6 @@ function builtInRevealer(hidedSTring, nonHidedstring) {
 // function to restart the game
 let restart = document.getElementById("restart");
 function showRestart() {
-  //playSound();
   restart.style.display = "unset";
 }
 
@@ -168,11 +188,15 @@ function isWon(keyword) {
   loadPhoto(keyword);
   return;
 }
+//function to playsound
+
 function playSound() {
   var sound = document.getElementById("selectOption");
   sound.load();
   sound.play();
 }
+
+// function for getting photo
 
 async function loadPhoto(keyword) {
   const frame = document.querySelector(".img-window");
