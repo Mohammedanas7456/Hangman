@@ -6,6 +6,7 @@ function hideScreen(arg) {
   } else if (arg == "country") {
     arrayToPass = [...countryList];
   } else if (arg === "names") {
+    arrayToPass = [...cricketersList];
   }
   playSound();
 
@@ -45,6 +46,7 @@ function animalGuess() {
       const str = builtInRevealer(revealedString, orignalString);
       wordInnerHTML.innerHTML = str;
       revealedString = str;
+      playSound();
 
       flag = true;
       if (!revealedString.includes("_")) {
@@ -61,6 +63,7 @@ function animalGuess() {
       event.target.value = "";
       // checking if more than a character
       if (userInput.length > 1) {
+        playSound();
         document.getElementById("two-letter-condition").innerHTML =
           "Please enter only 1 character";
         return;
@@ -152,7 +155,11 @@ function builtInRevealer(hidedSTring, nonHidedstring) {
 // function to restart the game
 let restart = document.getElementById("restart");
 function showRestart() {
+  playSound();
   restart.style.display = "unset";
+}
+function onRestart() {
+  window.location.reload();
 }
 // function to check for win
 function isWon(keyword) {

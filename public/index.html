@@ -27,7 +27,7 @@
         <p id="two-letter-condition" class="two-letter">  </p>
         <button type="button" id="hint" class="gameButton"> HINT </button>
         <div class="res">
-        <button onclick="window.location.reload()" id="restart" class="gameButton" style="display: none;">restart</button>
+        <button onclick="onRestart()" id="restart" class="gameButton" style="display: none;">restart</button>
         <div class="img-window">
             <div class="loader" ></div>
             <img />
@@ -40,10 +40,11 @@
         <h2 class="category">Choose a Category</h2>
         <button onclick="hideScreen('animal')" type="button" id="animal" class="gameButton"> Animals </button>
         <button onclick="hideScreen('country')" type="button" id="places" class="gameButton"> country </button>
-        <button onclick="hideScreen()" type="button" id="names" class="gameButton"> Names </button>
+        <button onclick="hideScreen('names')" type="button" id="names" class="gameButton"> Names </button>
     </div>
     <script src="./dataset/animals.js" ></script>
     <script src="./dataset/places.js" ></script>
     <script src="./hangman.js" ></script>
+    <script src="./dataset/names.js"></script>
 </body>
 </html>

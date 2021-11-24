@@ -153,8 +153,8 @@ input[type="text"]::placeholder {
   height: 200px;
   display: flex;
   position: fixed;
-  bottom: 17vh;
-  right: 26vw;
+  bottom: 16px;
+  right: 16px;
   z-index: 10;
   justify-content: center;
   align-items: center;
