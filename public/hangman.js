@@ -155,12 +155,10 @@ function builtInRevealer(hidedSTring, nonHidedstring) {
 // function to restart the game
 let restart = document.getElementById("restart");
 function showRestart() {
-  playSound();
+  //playSound();
   restart.style.display = "unset";
 }
-function onRestart() {
-  window.location.reload();
-}
+
 // function to check for win
 function isWon(keyword) {
   gameOverFlag = false;
